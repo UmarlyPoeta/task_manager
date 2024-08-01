@@ -16,20 +16,16 @@ Task Manager CLI is a simple command-line interface application for managing tas
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/YourUsername/TaskManagerCLI.git
+   git clone https://github.com/UmarlyPoeta/task_manager.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd TaskManagerCLI
+   cd task_manager
    ```
 
 3. Install any required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Usage
 
