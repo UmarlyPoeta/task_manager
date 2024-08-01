@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "task-manager"
+version = "0.1.0"
+description = "simple task manager cli/web python script"
+authors = ["UmarlyPoeta <pkozlowski@student.agh.edu.pl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+datetime = "^5.5"
+argparse = "^1.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
