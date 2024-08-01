@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 datetime = "^5.5"
 argparse = "^1.4.0"
+pytest = "^8.3.2"
 
 
 [build-system]

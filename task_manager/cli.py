@@ -4,6 +4,8 @@ from models import TaskManager
 task_manager = TaskManager()
 parser = argparse.ArgumentParser(description="Task Manager CLI")
 
+task_manager.load_from_file()
+
 subparsers = parser.add_subparsers(dest="command")
 
 # ----------------ADD--------------
@@ -54,3 +56,6 @@ elif args.command == "list":
 elif args.command == "complete":
     # Call the function to complete a task
     task_manager.complete_task(args.id)
+
+
+task_manager.save_to_file()

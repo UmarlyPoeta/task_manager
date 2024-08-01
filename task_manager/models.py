@@ -22,7 +22,7 @@ class Task:
         self. description = new_description
     
     def change_due_date(self, new_due_date: datetime.datetime):
-        if new_due_date < datetime.datetime.now():
+        if new_due_date > datetime.datetime.now():
             raise ValueError("Due time cannot be set to the past")
         self.due_date = new_due_date
     
@@ -67,7 +67,10 @@ class TaskManager:
     
     def create_task(self, title: str, description: str, due_date: datetime.datetime) -> object:
         TaskManager._id_counter +=1
-        task = Task(TaskManager._id_counter, title, description, datetime.datetime.now(), due_date, False)
+        due_date = datetime.datetime.fromisoformat(due_date)
+        if due_date < datetime.datetime.now():
+            raise ValueError("Due time cannot be set to the past")
+        task = Task(TaskManager._id_counter, title, description, datetime.datetime.now(),due_date, False)
         self.task_list.append(task)
         return task
     
@@ -105,9 +108,8 @@ class TaskManager:
                 raise ValueError("Invalid task parameter name to change")
     
     def complete_task(self, id:int):
-        for task in self.task_list:
-            if task.id == id:
-                task.completed = True
+        task_to_complete = self.get_task_by_id(id)
+        task_to_complete.completed = True
     
     
     def delete_task(self,id: int) -> None:
